@@ -1,7 +1,13 @@
 <?php
 
+use App\Http\Controllers\OceneController;
+use App\Models\Ocene;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $ocene = Ocene::all();
+    return view("welcome", compact("ocene"));
 });
+
+Route::view("/dodaj-ocenu", "addGrade");
+Route::post("/add-user-grade", [OceneController::class, "addGrade"]);
