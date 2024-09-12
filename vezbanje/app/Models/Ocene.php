@@ -11,6 +11,7 @@ class Ocene extends Model
     protected $fillable = [
         "predmet",
         "ocena",
-        "profesor"
+        "profesor",
+        "user_id"
     ];
 }
